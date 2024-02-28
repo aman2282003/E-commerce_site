@@ -132,7 +132,7 @@ function Rightbar() {
                             </div>
                         </MenuButton>
                         <MenuList className='text-black px-5 p-5 border bg-[#ffffff] leading-10  rounded-bl-lg rounded-br-lg'>
-                            <MenuItem><Button className='bg-[#0071dc] p-1 rounded-full text-white'>Sign in or create account</Button></MenuItem>
+                            <MenuItem><Button className='bg-[#0071dc] px-3 rounded-full text-white'>Sign in or create account</Button></MenuItem>
                             <hr className='mt-5 h-4'></hr>
                             <MenuItem><SlCalender className='mx-2' />Purchase History</MenuItem>
                             <MenuItem><CiGift className='mx-2' />Walmart+</MenuItem>
