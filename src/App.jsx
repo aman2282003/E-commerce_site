@@ -1,4 +1,5 @@
-import './App.css'
+
+import { Gridpicture } from './Components/Gridpicture'
 import { Navbar } from './Components/Navbar'
 import { Navbar2 } from './Components/Navbar2'
 
@@ -8,6 +9,7 @@ function App() {
     <>
       <Navbar />
       <Navbar2/>
+      <Gridpicture/>
     </>
   )
 }

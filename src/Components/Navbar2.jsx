@@ -6,7 +6,7 @@ import Address from "../assets/items.webp"
 
 function Component1() {
     return (
-        <div className='flex items-center text-white'>
+        <div className='hidden md:flex items-center text-white'>
             <img src={Address} className='h-6 w-6 my-1.5 mx-5' />
             <p className='font-bold cursor-pointer'>Where do you want items?</p>
             <FaChevronDown className='m-1.5 cursor-pointer' />
@@ -21,9 +21,8 @@ function Component1() {
 
 function Component2() {
     return (
-        <div className='font-bold text-white flex items-center gap-x-3'>
+        <div className='hidden md:flex font-bold text-white items-center gap-x-3'>
             <a className='hover:underline cursor-pointer'>Deals</a>
-            <a className='hover:underline cursor-pointer'>Grocery & Essentials</a>
             <a className='hover:underline cursor-pointer'>Easter</a>
             <a className='hover:underline cursor-pointer'>Walmart Style</a>
             <a className='hover:underline cursor-pointer'>Baby Days</a>
