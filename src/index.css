@@ -7,3 +7,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.my-custom-margin {
+    margin-top: 200px;
+    /* Adjust this value as needed */
+}
+

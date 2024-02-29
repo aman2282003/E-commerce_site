@@ -29,7 +29,7 @@ function Leftbar() {
             </div>
 
 
-            <div className='md:flex items-center gap-2 cursor-pointer hidden  rounded-full p-3 text-white hover:bg-[#06529a] text-xl justify-center' >
+            <div className='hidden md:flex items-center gap-2 cursor-pointer rounded-full p-3 text-white hover:bg-[#06529a] text-xl justify-center' >
                 <GiAbstract063 />
                 <Menu>
                     <MenuButton as={Button} className='font-bold'>
@@ -88,7 +88,7 @@ function Leftbar() {
 
 function Centerbar() {
     return (
-        <div className=' hidden relative lg:flex items-center flex-1 mx-6'>
+        <div className='  flex relative items-center flex-1 mx-6'>
             <Input htmlSize={4} className='p-1.5 rounded-full flex-1 ' placeholder='Search everything at Walmart online and in store' />
             <div className='absolute right-2 bg-[#ffc220] rounded-full p-1'>
                 <IoIosSearch />
@@ -101,7 +101,7 @@ function Rightbar() {
     return (
         <>
             <div className='flex items-center gap-x-2'>
-                <div className='flex items-center gap-2 whitespace-nowrap hover:bg-[#06529a] cursor-pointer p-3 rounded-full text-white' >
+                <div className='hidden md:flex items-center gap-2 whitespace-nowrap hover:bg-[#06529a] cursor-pointer p-3 rounded-full text-white' >
                     <CiHeart className='w-6 h-6' />
 
                     <Menu>
@@ -119,7 +119,7 @@ function Rightbar() {
                     </Menu>
 
                 </div>
-                <div className='flex items-center gap-2 cursor-pointer whitespace-nowrap hover:bg-[#06529a] p-3 rounded-full text-white'>
+                <div className='hidden md:flex items-center gap-2 cursor-pointer whitespace-nowrap hover:bg-[#06529a] p-3 rounded-full text-white'>
                     <CiUser className='w-6 h-6' />
 
 
