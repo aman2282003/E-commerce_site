@@ -1,71 +1,90 @@
-import { useState } from "react"
-import Data from "../db2.json"
-import { Button } from '@chakra-ui/react';
-import { TfiArrowCircleRight, TfiArrowCircleLeft } from "react-icons/tfi";
+import Data from "../db2.json";
+import { useContext } from "react";
+import { AuthContext } from "../Context/Authcontext";
+import { useNavigate } from "react-router-dom";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { Button, Text, Image } from '@chakra-ui/react';
 import { CiHeart } from "react-icons/ci";
 
-
 export const Items = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const { isAuth } = useContext(AuthContext);
+    const name = useNavigate();
 
-    const handlePrevClick = () => {
-        setCurrentIndex(prevIndex => prevIndex - 6 < 0 ? 0 : prevIndex - 6);
+    const addToCart = (item) => {
+        if (!isAuth) {
+            name("/signup");
+            console.log("Redirecting to signup component...");
+            return;
+        }
+        const existingItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        existingItems.push(item);
+        localStorage.setItem('cartItems', JSON.stringify(existingItems));
     };
 
-    const handleNextClick = () => {
-        setCurrentIndex(prevIndex => prevIndex + 6 >= Data.length ? prevIndex : prevIndex + 6);
+    const handleAddToCart = (ele) => {
+        addToCart(ele);
     };
 
-
-    function User({ user }) {
-        return (
-            <>
-
-                <div className=' m-3 p-3 w-[200px] h-[340px]'>
-                    <div className='flex justify-center'>
-
-                        <img src={user.image} alt="image" style={{ height: "100px", width: "120px" }} />
-                        <CiHeart style={{ height: "30px", width: "50px", marginRight: "-40px" }} />
-                    </div>
-
-                    <p className='font-bold' style={{ marginTop: "30px" }}>${user.price}</p>
-                    <p>{user.description.slice(0, 50)}</p>
-                    <div className='flex justify-center m-1'>
-                        <Button className='border mt-2 border-black  p-2 rounded-full'>Add to cart+</Button>
-                    </div>
-                </div >
-
-
-            </>
-        );
-    }
-
-
-
-
+    const settings = {
+        infinite: false,
+        speed: 500,
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        initialSlide: 0,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true,
+                },
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2,
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
+    };
 
     return (
         <>
-
-            <div className="flex mx-[60px] my-[30px] flex-wrap">
-                <div className=' h-[100%]'>
-                    <p className='mt-2 font-bold text-2xl'>More fresh minds</p>
-                    <div className='flex flex-wrap '>
-                        {Data.slice(currentIndex, currentIndex + 6).map((ele) => (
-                            <User user={ele} key={ele.id} />
+            <div className="px-5 py-0 w-[100%] m-auto ">
+                <Text className='mt-2 font-bold text-2xl'>More Fresh Minds</Text>
+                <div className=" mt-2 px-6">
+                    <Slider {...settings}>
+                        {Data.map((ele) => (
+                            <div className=" p-6 h-[300px] w-[180px]" key={ele.id}>
+                                <div className='flex justify-center'>
+                                    <Image src={ele.image} alt="images"
+                                        style={{ height: "100px", width: "120px" }}
+                                    />
+                                    <CiHeart style={{ height: "30px", width: "50px", marginRight: "-40px" }} />
+                                </div>
+                                <p className='font-bold' style={{ marginTop: "30px" }}>${ele.price}</p>
+                                <p>{ele.description.slice(0, 50)}</p>
+                                <div className='flex justify-center m-1'>
+                                    <Button onClick={() => handleAddToCart(ele)} className='border mt-2 border-black p-2 rounded-full'>Add to cart+</Button>
+                                </div>
+                            </div>
                         ))}
-                        <TfiArrowCircleLeft className="hidden md:flex" onClick={handlePrevClick} style={{ position: "absolute", color: "grey", marginTop: "9%", marginLeft: "-3%", height: "40px", width: "50px" }} />
-                        <TfiArrowCircleRight className="hidden md:flex" onClick={handleNextClick} style={{ position: "absolute", color: "grey", marginTop: "9%", marginLeft: "90%", height: "40px", width: "50px" }} />
-                    </div>
-
+                    </Slider>
                 </div>
-
             </div>
-
-
         </>
-
-
-
-    )
-}
+    );
+};

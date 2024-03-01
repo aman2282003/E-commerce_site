@@ -4,8 +4,17 @@ import { Button, GridItem } from '@chakra-ui/react';
 import { TfiArrowCircleRight, TfiArrowCircleLeft } from "react-icons/tfi";
 import { CiHeart } from "react-icons/ci";
 import GrassImage from "../assets/Grass.webp"
+import { useContext } from "react";
+import { AuthContext } from "../Context/Authcontext";
+import { useNavigate } from "react-router-dom"
+
 
 export const Flashdeals2 = () => {
+    const { isAuth } = useContext(AuthContext);
+
+    const name = useNavigate()
+
+
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const handlePrevClick = () => {
@@ -17,7 +26,30 @@ export const Flashdeals2 = () => {
     };
 
 
+
+    const addToCart = (item) => {
+        if (!isAuth) {
+            name("/signup")
+            return;
+        }
+        const existingItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        existingItems.push(item);
+        localStorage.setItem('cartItems', JSON.stringify(existingItems));
+    };
+
+
+
+
+
     function User({ user }) {
+
+
+        const handleAddToCart = () => {
+            addToCart(user);
+        };
+
+
+
         return (
             <>
 
@@ -31,7 +63,7 @@ export const Flashdeals2 = () => {
                     <p className='font-bold' style={{ marginTop: "30px" }} >{user.price}</p>
                     <p>{user.description.slice(0, 80)}</p>
                     <div className='flex justify-center m-1'>
-                        <Button className='border mt-2 border-black  p-2 rounded-full'>Add to cart+</Button>
+                        <Button onClick={handleAddToCart} className='border mt-2 border-black  p-2 rounded-full'>Add to cart+</Button>
                     </div>
                 </div>
 

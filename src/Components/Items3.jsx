@@ -1,4 +1,4 @@
-import Data from "../db5.json";
+import Data from "../db4.json";
 import { useContext } from "react";
 import { AuthContext } from "../Context/Authcontext";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Button, Text, Image } from '@chakra-ui/react';
 import { CiHeart } from "react-icons/ci";
 
-export const Items2 = () => {
+export const Items3 = () => {
     const { isAuth } = useContext(AuthContext);
     const name = useNavigate();
 
@@ -64,19 +64,23 @@ export const Items2 = () => {
     return (
         <>
             <div className="px-5 py-0 w-[100%] m-auto ">
-                <Text className='mt-2 font-bold text-2xl'>Top picks for your oasis</Text>
+                <box className="flex justify-between">
+                    <Text className='mt-2 font-bold text-xl'>Shop all Easter</Text>
+                    <a className="underline">Decor, baskets & more.</a>
+                </box>
+                <Text className='mt-2'>Decor, baskets & more..</Text>
                 <div className=" mt-2 px-6">
                     <Slider {...settings}>
                         {Data.map((ele) => (
                             <div className=" p-6 h-[300px] w-[180px]" key={ele.id}>
                                 <div className='flex justify-center'>
-                                    <Image src={ele.image_link} alt="images"
+                                    <Image src={ele.thumbnail} alt="images"
                                         style={{ height: "100px", width: "120px" }}
                                     />
                                     <CiHeart style={{ height: "30px", width: "50px", marginRight: "-40px" }} />
                                 </div>
                                 <p className='font-bold' style={{ marginTop: "30px" }}>${ele.price}</p>
-                                <p>{ele.description.slice(0, 50)}</p>
+                                <p>{ele.title}</p>
                                 <div className='flex justify-center m-1'>
                                     <Button onClick={() => handleAddToCart(ele)} className='border mt-2 border-black p-2 rounded-full'>Add to cart+</Button>
                                 </div>

@@ -35,7 +35,7 @@ function Component2() {
 
 export const Navbar2 = () => {
     return (
-        <div className='bg-[#0071dc] mt-0.5 flex justify-between py-1'>
+        <div className='mt-0.5 bg-[#0071dc] flex justify-between py-1 h-12'>
             <Component1 />
             <Component2 />
         </div>

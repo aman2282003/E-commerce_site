@@ -4,9 +4,15 @@ import { Button } from '@chakra-ui/react';
 import { TfiArrowCircleRight, TfiArrowCircleLeft } from "react-icons/tfi";
 import { CiHeart } from "react-icons/ci";
 import video1 from "../assets/Videos/1.mp4"
+import { useContext } from "react";
+import { AuthContext } from "../Context/Authcontext";
+import { useNavigate } from "react-router-dom"
 
 
 export const Flashdeals = () => {
+    const { isAuth } = useContext(AuthContext);
+
+    const name = useNavigate()
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const handlePrevClick = () => {
@@ -18,7 +24,28 @@ export const Flashdeals = () => {
     };
 
 
+
+    const addToCart = (item) => {
+        if (!isAuth) {
+            name("/signup")
+            console.log("Redirecting to signup component...");
+            return;
+        }
+        const existingItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        existingItems.push(item);
+        localStorage.setItem('cartItems', JSON.stringify(existingItems));
+    };
+
+
+
+
+
     function User({ user }) {
+        const handleAddToCart = () => {
+            addToCart(user);
+        };
+
+
         return (
             <>
 
@@ -32,7 +59,7 @@ export const Flashdeals = () => {
                     <p className='font-bold' style={{ marginTop: "30px" }} >{user.price}</p>
                     <p>{user.description.slice(0, 80)}</p>
                     <div className='flex justify-center m-1'>
-                        <Button className='border mt-2 border-black  p-2 rounded-full'>Add to cart+</Button>
+                        <Button onClick={handleAddToCart} className='border mt-2 border-black  p-2 rounded-full'>Add to cart+</Button>
                     </div>
                 </div >
 
@@ -52,9 +79,9 @@ export const Flashdeals = () => {
                 <div className='w-full md:w-[58%] h-[100%]'>
                     <div className='flex justify-between p-1' >
                         <p className='font-bold text-xl'>Pack Like A Pro</p>
-                        <p>Show All</p>
+                        <a className="underline">View All.</a>
                     </div>
-                    <p className='mt-2'>Upto 65% off</p>
+                    <p className='mt-2'>From suitcases to sunglasses.</p>
                     <div className='flex flex-wrap '>
                         {Data.slice(currentIndex, currentIndex + 3).map((ele) => (
                             <User user={ele} key={ele.id} />

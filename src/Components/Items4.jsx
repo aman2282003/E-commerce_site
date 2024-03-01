@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Button, Text, Image } from '@chakra-ui/react';
 import { CiHeart } from "react-icons/ci";
 
-export const Items2 = () => {
+export const Items4 = () => {
     const { isAuth } = useContext(AuthContext);
     const name = useNavigate();
 
@@ -64,7 +64,11 @@ export const Items2 = () => {
     return (
         <>
             <div className="px-5 py-0 w-[100%] m-auto ">
-                <Text className='mt-2 font-bold text-2xl'>Top picks for your oasis</Text>
+                <box className="flex justify-between">
+                    <Text className='mt-2 font-bold text-xl'>More Black-owned brands</Text>
+                    <a className="underline">View all</a>
+                </box>
+                <Text className='mt-2 '>Support the beauty of diversity.</Text>
                 <div className=" mt-2 px-6">
                     <Slider {...settings}>
                         {Data.map((ele) => (

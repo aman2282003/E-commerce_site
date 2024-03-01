@@ -14,9 +14,9 @@ export const Gridpicture = () => {
     return (
         <div className="lg:mx-[20px] lg:my-[30px] md:mx-[40px] md:my-[20px] sm:mx-[0] sm:my-[20px]" >
             <Grid
-                h='900px'
-                templateRows={{ sm: 'repeat(13,1fr)', lg: 'repeat(5, 1fr)' }}
-                templateColumns={{ sm: 'repeat(2,1fr)', md: 'repeat(2,1fr)', lg: 'repeat(4, 1fr)' }}
+                h={{ base: 'auto', sm: '600px', lg: '900px' }}
+                templateRows={{ sm: 'repeat(13, 1fr)', lg: 'repeat(5, 1fr)' }}
+                templateColumns={{ sm: 'repeat(2, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }}
                 gap={4}
 
             >

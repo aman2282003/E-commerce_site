@@ -37,7 +37,7 @@ export const Gridpicture3 = () => {
                     <a className=' px-5 underline'>shop now</a>  </GridItem>
                 <GridItem className="cursor-pointer" borderRadius={15} rowSpan={1} colSpan={1} bgImage={`url(${image3})`}
                     backgroundSize="cover" backgroundPosition="center">
-                    <p className='font-bold p-5 text-2xl text-blue-1000'>Bring on home flexible heat</p>
+                    <p className='font-bold p-5 text-2xl text-blue-1000'>Bring on the home flexible heat</p>
                     <a className='p-5 underline'>shop heaters</a> </GridItem>
                 <GridItem className="cursor-pointer" borderRadius={15} rowSpan={1} colSpan={1} bgImage={`url(${image4})`}
                     backgroundSize="cover" backgroundPosition="center">

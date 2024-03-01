@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom"
 import { GiAbstract063 } from "react-icons/gi";
 import { BsBorderAll } from "react-icons/bs";
 import { IoIosSearch } from "react-icons/io";
@@ -132,7 +133,9 @@ function Rightbar() {
                             </div>
                         </MenuButton>
                         <MenuList className='text-black px-5 p-5 border bg-[#ffffff] leading-10  rounded-bl-lg rounded-br-lg'>
-                            <MenuItem><Button className='bg-[#0071dc] px-3 rounded-full text-white'>Sign in or create account</Button></MenuItem>
+                            <MenuItem>
+                                <Link to="/signup"><Button className='bg-[#0071dc] px-3 rounded-full text-white'>Sign in or create account</Button></Link>
+                            </MenuItem>
                             <hr className='mt-5 h-4'></hr>
                             <MenuItem><SlCalender className='mx-2' />Purchase History</MenuItem>
                             <MenuItem><CiGift className='mx-2' />Walmart+</MenuItem>
@@ -143,7 +146,7 @@ function Rightbar() {
 
                 </div>
                 <div className=' hover:bg-[#06529a] cursor-pointer rounded-full p-3 text-white '>
-                    <FiShoppingCart className='w-7 h-7' />
+                    <Link to = "/cart"><FiShoppingCart className='w-7 h-7' /></Link>
                 </div>
             </div>
         </>
@@ -153,7 +156,7 @@ function Rightbar() {
 
 export const Navbar = () => {
     return (
-        <div className=" w-full lg:px-9 py-1 navbar bg-[#0071dc] flex justify-between items-center">
+        <div className="sticky top-0 z-10 w-full lg:px-9 py-1 navbar bg-[#0071dc] flex justify-between items-center">
             <Leftbar />
             <Centerbar />
             <Rightbar />
