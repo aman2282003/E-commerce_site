@@ -284,7 +284,7 @@ function Rightbar() {
 export const Navbar = () => {
 
     return (
-        <div className="p-1 sticky top-0 z-10 w-full  navbar bg-[#0071dc] flex justify-between items-center">
+        <div className=" sticky top-0 z-10 w-full  navbar bg-[#0071dc] flex justify-between items-center">
             <Leftbar />
             <Centerbar />
             <Rightbar />
