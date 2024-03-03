@@ -23,7 +23,7 @@ export const Gridpicture5 = () => {
                     <p className=' px-3 text-6xl text-white'>Black-led<br />brands</p>
                     <Button className='m-6 fixed p-2 text-xl w-40 border bg-white  border-black bg-blue rounded-full'>Learn more</Button>
                 </GridItem>
-                <GridItem className="cursor-pointer" borderRadius={15} rowSpan={1} colSpan={2} bgImage={`url(${image2})`}
+                <GridItem className="cursor-pointer" borderRadius={15} rowSpan={1} colSpan={2} bgImage={`url(${"https://i5.walmartimages.com/dfw/4ff9c6c9-1d80/k2-_2717e6b4-7f29-450b-be46-415792fb365f.v1.jpg?odnHeight=292&odnWidth=512&odnBg=&odnDynImageQuality=70"})`}
                     backgroundSize="cover"
                     backgroundPosition="center">
                     <p className=' p-3 text-xl text-blue'>New & exclusive collab</p>
@@ -35,11 +35,11 @@ export const Gridpicture5 = () => {
                     <p style={{ marginTop: "400px" }} className=' p-3 text-xl text-blue'>Womend-led products</p>
                     <p className=' font-bold px-3 text-3xl text-blue'>Her barnds, your<br /> faves</p>
                     <a className=' px-5 underline'>Learn more</a>  </GridItem>
-                <GridItem className="cursor-pointer" borderRadius={15} rowSpan={1} colSpan={1} bgImage={`url(${image3})`}
+                <GridItem className="cursor-pointer" borderRadius={15} rowSpan={1} colSpan={1} bgImage={`url(${"https://i5.walmartimages.com/dfw/4ff9c6c9-4e0f/k2-_7fcd9674-3427-4927-b9fa-b1195d69a7d4.v1.jpg?odnHeight=342&odnWidth=248&odnBg=&odnDynImageQuality=70"})`}
                     backgroundSize="cover" backgroundPosition="center">
                     <p className='font-bold p-5 text-xl text-blue-1000'>The Lip Bar--easy<br />glam Sweet treats Bring on </p>
                     <a className='p-5 underline'>shop now</a> </GridItem>
-                <GridItem className="cursor-pointer" borderRadius={15} rowSpan={1} colSpan={1} bgImage={`url(${image4})`}
+                <GridItem className="cursor-pointer" borderRadius={15} rowSpan={1} colSpan={1} bgImage={`url(${"https://i5.walmartimages.com/dfw/4ff9c6c9-1a23/k2-_a65f5e7b-f682-4b4d-8f55-012a6be3fdb1.v1.jpg?odnHeight=342&odnWidth=248&odnBg=&odnDynImageQuality=70"})`}
                     backgroundSize="cover" backgroundPosition="center">
                     <p className='font-bold p-5 text-xl text-blue'>Simplify your<br />money</p>
                     <a className='p-5 underline'>Learn more</a></GridItem>
