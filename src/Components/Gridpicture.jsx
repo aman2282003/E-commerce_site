@@ -19,13 +19,12 @@ export const Gridpicture = () => {
                 gap={4}>
 
 
-                <GridItem className="cursor-pointer" rowSpan={{ base: 10, lg: 1 }} colSpan={{ base: 2, lg: 1 }}>
-                    <div className='relative'>
-                        <img src={image1} className='block border-rounded'></img>
-                        <div className='absolute top-0 left-0  flex flex-col justify-center items-center'>
-                            <p className='font-bold p-5 text-xl text-blue-1000'>Floor care for so much less</p>
-                        </div>
-                    </div>
+
+
+                <GridItem className="cursor-pointer" borderRadius={15} rowSpan={{ base: 10, lg: 1 }} colSpan={{ base: 2, lg: 1 }} bgImage={`url(${image1})`}
+                    backgroundSize="cover"
+                    backgroundPosition="center">
+                    <p className='font-bold p-5 text-xl text-blue-1000'>Floor care for so much less</p>
                 </GridItem>
 
 
@@ -33,7 +32,7 @@ export const Gridpicture = () => {
                 <GridItem className="cursor-pointer" borderRadius={15} rowSpan={2} colSpan={2} bgImage={`url(${image2})`}
                     backgroundSize="cover"
                     backgroundPosition="center">
-                    <Button className='mx-10 fixed my-custom-margin p-3 w-40 border font-bold border-black bg-white rounded-full'>Shop All</Button>
+                    {/* <Button className='mx-10 fixed my-custom-margin p-3 w-40 border font-bold border-black bg-white rounded-full'>Shop All</Button> */}
                 </GridItem>
                 <GridItem className="cursor-pointer" borderRadius={15} rowSpan={1} colSpan={1} bgImage={`url(${image3})`}
                     backgroundSize="cover" backgroundPosition="center">
@@ -41,7 +40,7 @@ export const Gridpicture = () => {
                     <a className='p-5 underline'>shop now</a> </GridItem>
                 <GridItem className="cursor-pointer" borderRadius={15} rowSpan={3} colSpan={1} bgImage={`url(${image4})`}
                     backgroundSize="cover" backgroundPosition="center">
-                    <p className='font-bold p-5 text-3xl text-blue-1000'>Top styles-low, low prices</p>
+                    <p className='hidden md:flexfont-bold p-5 text-3xl text-blue-1000'>Top styles-low, low prices</p>
                     <a className='p-5 underline'>shop now</a> </GridItem>
                 <GridItem className="cursor-pointer" borderRadius={15} rowSpan={1} colSpan={1} bgImage={`url(${"https://i5.walmartimages.com/dfw/4ff9c6c9-c0a8/k2-_7f9bdd0f-177c-4330-9758-ef4f41edad44.v1.jpg?odnHeight=256&odnWidth=385&odnBg=&odnDynImageQuality=70"})`}
                     backgroundSize="cover" backgroundPosition="center">

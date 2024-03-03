@@ -1,4 +1,4 @@
-import {Data} from "../db2.js";
+import { Data } from "../db2.js";
 import { useContext } from "react";
 import { AuthContext } from "../Context/Authcontext";
 import { useNavigate, Link } from "react-router-dom";
@@ -32,7 +32,7 @@ export const Items3 = () => {
             toast({
                 title: <CustomTitle>Item Added successfully to cart</CustomTitle>,
                 status: "success",
-                duration: 3000, 
+                duration: 3000,
                 isClosable: true,
                 icon: <IoCheckmarkDoneCircle style={{ fontSize: "50px", color: "green" }} />,
                 transition: Slide,
@@ -84,7 +84,7 @@ export const Items3 = () => {
 
     return (
         <>
-            <div className="px-5 py-0 w-[100%] m-auto ">
+            <div className="px-5 py-5 w-[100%] m-auto ">
                 <Box className="flex justify-between">
                     <Text className='mt-2 font-bold text-xl'>Shop all Easter</Text>
                     <Link to="/Viewall" className="underline">Decor, baskets & more.</Link>

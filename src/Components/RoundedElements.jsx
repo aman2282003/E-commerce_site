@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import {Data} from "../db3.js"
+import { Data } from "../db3.js"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -51,7 +51,7 @@ export const RoundedElements = () => {
 
 
 
-            <div className="p-8">
+            <div className="px-10">
 
 
                 <Box className="flex justify-between">

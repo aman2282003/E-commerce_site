@@ -1,4 +1,4 @@
-import {Data} from "../db2.js";
+import { Data } from "../db2.js";
 import { useContext } from "react";
 import { AuthContext } from "../Context/Authcontext";
 import { useNavigate } from "react-router-dom";
@@ -87,7 +87,7 @@ export const Items = () => {
                 <div className=" mt-2 px-6">
                     <Slider {...settings}>
                         {Data.map((ele) => (
-                            <div className=" p-2 h-[300px] w-[180px]" key={ele.id}>
+                            <div className=" px-5 h-[300px] w-[180px]" key={ele.id}>
                                 <div className='flex justify-center'>
                                     <Image src={ele.img} alt="images"
                                         style={{ height: "100px", width: "120px" }}
