@@ -21,7 +21,7 @@ function Component1() {
 
 function Component2() {
     return (
-        <div className='hidden md:flex font-bold text-white items-center gap-x-3'>
+        <div className='hidden md:flex font-bold text-white text-sm items-center gap-x-3'>
             <a className='hover:underline cursor-pointer'>Deals</a>
             <a className='hover:underline cursor-pointer'>Easter</a>
             <a className='hover:underline cursor-pointer'>Walmart Style</a>
