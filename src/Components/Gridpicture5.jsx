@@ -10,7 +10,7 @@ export const Gridpicture5 = () => {
     return (
         <div className="hidden md:flex mx-[20px] my-[30px]" >
             <Grid
-                h='550px'
+                h='600px'
                 templateRows={'repeat(2, 1fr)'}
                 templateColumns={'repeat(5, 1fr)'}
                 gap={4}

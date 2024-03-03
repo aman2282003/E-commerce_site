@@ -1,14 +1,25 @@
 import React from 'react'
 import { Link } from "react-router-dom"
-import { GiAbstract063 } from "react-icons/gi";
+import { GiAbstract063, GiHamburgerMenu } from "react-icons/gi";
 import { BsBorderAll } from "react-icons/bs";
 import { IoIosSearch } from "react-icons/io";
 import { CiHeart, CiUser } from "react-icons/ci";
 import { FiShoppingCart } from "react-icons/fi";
+import { BiSolidPurchaseTag } from "react-icons/bi";
 import { SlCalender } from "react-icons/sl";
 import { CiGift } from "react-icons/ci";
+import { useContext } from "react";
+import { AuthContext } from "../Context/Authcontext";
 import Logo from "../assets/walmartLogo.svg"
 import { IoColorFillOutline } from "react-icons/io5";
+import { HiTemplate } from "react-icons/hi";
+import smLogo from "../assets/logo.png";
+import { CiBoxList } from "react-icons/ci";
+import { IoIosHelpCircleOutline } from "react-icons/io";
+import { GrBusinessService } from "react-icons/gr";
+import { RiFeedbackFill } from "react-icons/ri";
+import w from "../assets/w+.svg"
+import { useState } from 'react';
 import {
     Input,
     Menu,
@@ -21,14 +32,129 @@ import {
     MenuOptionGroup,
     MenuDivider,
 } from '@chakra-ui/react'
+import {
+    Drawer,
+    DrawerBody,
+    DrawerFooter,
+    DrawerHeader,
+    DrawerOverlay,
+    DrawerContent,
+    DrawerCloseButton,
+} from '@chakra-ui/react'
+
+
+
 
 function Leftbar() {
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const onOpen = () => setIsOpen(true);
+    const onClose = () => setIsOpen(false);
+
     return (
         <div className='flex  items-center gap-x-3'>
-            <div className=' hover:bg-[#06529a] p-2 rounded-full '>
+            <div className='hidden md:flex hover:bg-[#06529a] p-2 rounded-full '>
                 <img className='h-12 cursor-pointer' src={Logo} />
             </div>
 
+
+
+            <Button onClick={isOpen ? onClose : onOpen} >
+                <div className="md:hidden">
+                    <GiHamburgerMenu className="w-8 h-8 text-white" />
+                </div>
+            </Button>
+            <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
+                <DrawerOverlay />
+                <DrawerContent className="bg-white py-24 pl-8">
+                    <DrawerBody >
+                        <div className='flex justify-start h-[50px] items-center '>
+                            <img className=" h-[40px] w-[40px] md:hidden" src={smLogo} alt="Logo" />
+                            <Link to="/signup">    <Button className='bg-[#0071dc] text-white m-5 p-3 rounded-full'>Sign in or create Account</Button></Link>
+                        </div>
+
+
+                        <p className='py-2.5 flex gap-3 items-center'>
+                            <img className="h-[25px] w-[25px]" src={w}></img>
+                            Wlamart+</p>
+                        <hr />
+                        <p className='py-2.5 flex gap-3 items-center'>
+                            <BiSolidPurchaseTag />
+                            Purchase history</p>
+                        <p className='py-2.5 flex gap-3 items-center'>
+                            <HiTemplate />My items</p>
+                        <p className='py-2.5 flex gap-3 items-center'>
+                            <CiUser />Account</p>
+                        <hr />
+                        <p className='py-2.5 flex gap-3 items-center'>
+                            <IoIosHelpCircleOutline />Help</p>
+                        <hr />
+                        <p className='py-2.5 flex gap-3 items-center'>
+                            <CiHeart />Lists</p>
+                        <p className='py-2.5 flex gap-3 items-center'>
+                            <CiGift />Registeries</p>
+                        <hr />
+                        <p className='py-2.5 flex gap-3 items-center'>
+                            <CiBoxList />Departments</p>
+                        <p className='py-2.5 flex gap-3 items-center'>
+                            <GrBusinessService />Services</p>
+                        <hr />
+                        <p className='py-2.5 flex gap-3 items-center'>
+                            <RiFeedbackFill />Give Feedback</p>
+                    </DrawerBody>
+                </DrawerContent>
+            </Drawer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <img className="h-[40px] w-[40px] mx-auto md:hidden" src={smLogo} alt="Logo" />
 
             <div className='hidden md:flex items-center gap-2 cursor-pointer rounded-full p-3 text-white hover:bg-[#06529a] text-xl justify-center' >
                 <GiAbstract063 />
@@ -89,8 +215,8 @@ function Leftbar() {
 
 function Centerbar() {
     return (
-        <div className='  flex relative items-center flex-1 mx-6'>
-            <Input htmlSize={4} className='p-1.5 rounded-full flex-1 ' placeholder='Search everything at Walmart online and in store' />
+        <div className='  flex relative items-center flex-1 mx-4'>
+            <Input htmlSize={4} className='p-1.5 rounded-full flex-1 ' placeholder='Search everything' />
             <div className='absolute right-2 bg-[#ffc220] rounded-full p-1'>
                 <IoIosSearch />
             </div>
@@ -99,6 +225,7 @@ function Centerbar() {
 }
 
 function Rightbar() {
+    const { isAuth } = useContext(AuthContext);
     return (
         <>
             <div className='flex items-center gap-x-2'>
@@ -127,9 +254,9 @@ function Rightbar() {
 
                     <Menu>
                         <MenuButton as={Button} className='font-bold'>
-                            <div className="text">
-                                <p>Sign In</p>
-                                <p className="font-bold">Account</p>
+                            <div className="text ">
+                                {isAuth ? <p>   Logout</p> : <p>Sign in</p>}
+                                {/* <p className="font-bold">Account</p> */}
                             </div>
                         </MenuButton>
                         <MenuList className='text-black px-5 p-5 border bg-[#ffffff] leading-10  rounded-bl-lg rounded-br-lg'>
@@ -145,8 +272,8 @@ function Rightbar() {
 
 
                 </div>
-                <div className=' hover:bg-[#06529a] cursor-pointer rounded-full p-3 text-white '>
-                    <Link to = "/cart"><FiShoppingCart className='w-7 h-7' /></Link>
+                <div className='flex hover:bg-[#06529a] cursor-pointer rounded-full p-3 text-white '>
+                    <Link to="/cart"><FiShoppingCart className='w-7 h-7' /></Link>
                 </div>
             </div>
         </>
@@ -155,8 +282,9 @@ function Rightbar() {
 }
 
 export const Navbar = () => {
+
     return (
-        <div className="sticky top-0 z-10 w-full lg:px-9 py-1 navbar bg-[#0071dc] flex justify-between items-center">
+        <div className="p-3 sticky top-0 z-10 w-full  navbar bg-[#0071dc] flex justify-between items-center">
             <Leftbar />
             <Centerbar />
             <Rightbar />

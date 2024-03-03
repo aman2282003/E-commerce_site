@@ -19,7 +19,8 @@ import { Items3 } from '../Components/Items3'
 import { Items4 } from '../Components/Items4'
 import { Footer1 } from '../Components/Footer1'
 import { Footer2 } from '../Components/Footer2'
-
+import { Login } from '../Components/Others/Loginpage'
+import { Viewallpage } from '../Components/Others/Viewallpage'
 export function Allroutes() {
 
     return (
@@ -42,7 +43,8 @@ export function Allroutes() {
             <Gridpicture5 />
             <Items4 />
             <Footer1 />
-            {/* <Footer2 /> */}
+            <Footer2 />
+            
         </>
     )
 }

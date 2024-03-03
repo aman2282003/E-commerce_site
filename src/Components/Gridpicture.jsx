@@ -12,20 +12,24 @@ import image9 from "../assets/Grid_pics/9.webp"
 import image10 from "../assets/Grid_pics/10.webp"
 export const Gridpicture = () => {
     return (
-        <div className="lg:mx-[20px] lg:my-[30px] md:mx-[40px] md:my-[20px] sm:mx-[0] sm:my-[20px]" >
-            <Grid
-                h={{ base: 'auto', sm: '600px', lg: '900px' }}
+        <div className="mx-[20px] my-[30px]" >
+            <Grid h={{ base: 'auto', sm: '600px', lg: '1000px' }}
                 templateRows={{ sm: 'repeat(13, 1fr)', lg: 'repeat(5, 1fr)' }}
                 templateColumns={{ sm: 'repeat(2, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }}
-                gap={4}
+                gap={4}>
 
-            >
-                <GridItem className="cursor-pointer" borderRadius={15} rowSpan={{ base: 10, lg: 1 }} colSpan={{ base: 2, lg: 1 }} bgImage={`url(${image1})`}
-                    backgroundSize="cover"
-                    backgroundPosition="center">
-                    <p className='font-bold p-5 text-xl text-blue-1000'>Floor care for so much less</p>
-                    <a className='p-5 underline'>shop now</a>
+
+                <GridItem className="cursor-pointer" rowSpan={{ base: 10, lg: 1 }} colSpan={{ base: 2, lg: 1 }}>
+                    <div className='relative'>
+                        <img src={image1} className='block border-rounded'></img>
+                        <div className='absolute top-0 left-0  flex flex-col justify-center items-center'>
+                            <p className='font-bold p-5 text-xl text-blue-1000'>Floor care for so much less</p>
+                        </div>
+                    </div>
                 </GridItem>
+
+
+
                 <GridItem className="cursor-pointer" borderRadius={15} rowSpan={2} colSpan={2} bgImage={`url(${image2})`}
                     backgroundSize="cover"
                     backgroundPosition="center">
@@ -54,7 +58,7 @@ export const Gridpicture = () => {
                     <a className='p-5 underline'>shop now</a></GridItem>
                 <GridItem className="cursor-pointer" borderRadius={15} rowSpan={3} colSpan={1} bgImage={`url(${image10})`}
                     backgroundSize="cover" backgroundPosition="center">
-                    <p className='font-bold p-5 text-xl text-blue-1000'>Sports & outdoors for way less</p>
+                    <p className='hidden md:flex font-bold p-5 text-xl text-blue-1000'>Sports & outdoors for way less</p>
                     <a className='p-5 underline'>shop now</a></GridItem>
                 <GridItem borderRadius={15} rowSpan={{ base: 2, lg: 1 }} colSpan={1} bgImage={`url(${image8})`}
                     backgroundSize="cover" backgroundPosition="center">

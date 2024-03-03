@@ -5,11 +5,11 @@ import Logo from "../../assets/logo.png";
 import { IoCheckmarkDoneCircle } from "react-icons/io5";
 import { useContext } from "react";
 import { AuthContext } from '../../Context/Authcontext';
+import { Link } from "react-router-dom"
+import { RxCrossCircled } from "react-icons/rx";
 
 
 export const Signup = () => {
-
-  const { isAuth, setisAuth } = useContext(AuthContext);
 
 
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -25,7 +25,12 @@ export const Signup = () => {
 
 
   const CustomTitle = ({ children }) => (
-    <div style={{ fontSize: "30px", color: "#0071dc" }}>{children}</div>
+    <div style={{ fontSize: "30px", color: "green" }}>{children}</div>
+  );
+
+
+  const CustomTitleErr = ({ children }) => (
+    <div style={{ fontSize: "30px", color: "red" }}>{children}</div>
   );
 
 
@@ -34,7 +39,7 @@ export const Signup = () => {
     const { email, password } = formData;
 
 
-    if (email.length > 2 && password.length > 2) {
+    if (email.trim() && password.trim()) {
       localStorage.setItem('userData', JSON.stringify(formData));
       setFormData({ email: "", password: "" });
 
@@ -44,13 +49,21 @@ export const Signup = () => {
         status: "success",
         duration: 3000, // 5 seconds
         isClosable: true,
-        icon: <IoCheckmarkDoneCircle style={{ fontSize: "50px", color: "#0071dc" }} />, // Adjust the size of the icon here
+        icon: <IoCheckmarkDoneCircle style={{ fontSize: "50px", color: "green" }} />, // Adjust the size of the icon here
         transition: Slide,
       });
-      setisAuth(true)
+    
     }
     else {
-      console.log("Please enter a valid input")
+      toast({
+        title: <CustomTitleErr>Please Enter Valid Credentails</CustomTitleErr>,
+        status: "error",
+        duration: 3000, // 5 seconds
+        isClosable: true,
+        variant: "solid",
+        icon: <RxCrossCircled style={{ fontSize: "50px", color: "red" }} />, // Adjust the size of the icon here
+        transition: Slide,
+      });
     }
   };
 
@@ -72,19 +85,20 @@ export const Signup = () => {
         <br />
         <Button className="bg-[#0071dc] m-3 text-white p-3 rounded-full w-[300px]" type="submit">Submit</Button>
       </form>
+      <p>Already a user<Link to="/Login"><span className='underline text-blue-600'> Click Here</span> </Link>to login</p>
       <div>
         <p className='font-xl'>Securing your personal information is our priority.</p>
         <p className='font-xl underline'>See our Privacy measures.</p>
       </div>
       <hr className='my-10' />
-      <div className='flex gap-5 font-sm flex-wrap justify-center'>
-        <p>@2024 Walmart. All Rights Reserved.</p>
-        <a href="">Give feedback</a>
-        <a href="">CA Privacy Rights</a>
-        <a href="">Your Privacy Choices</a>
-        <a href="">Notice at collection</a>
-        <a href="">Request my personal Information</a>
-        <a href="">California Supply Chains Act</a>
+      <div className='text-start md:text-center'>
+        <p className="cursor-pointer  mx-2 my-2 block md:inline">@2024 Walmart. All Rights Reserved.</p>
+        <a className="cursor-pointer  mx-2 my-2 block md:inline">Give feedback</a>
+        <a className="cursor-pointer  mx-2 my-2 block md:inline">CA Privacy Rights</a>
+        <a className="cursor-pointer  mx-2 my-2 block md:inline">Your Privacy Choices</a>
+        <a className="cursor-pointer  mx-2 my-2 block md:inline">Notice at collection</a>
+        <a className="cursor-pointer  mx-2 my-2 block md:inline">Request my personal Information</a>
+        <a className="cursor-pointer  mx-2 my-2 block md:inline">California Supply Chains Act</a>
       </div>
     </div>
   );

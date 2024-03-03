@@ -1,14 +1,24 @@
-import Data from "../db4.json";
+import {Data} from "../db2.js";
 import { useContext } from "react";
 import { AuthContext } from "../Context/Authcontext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Button, Text, Image } from '@chakra-ui/react';
+import { Button, Text, Image, Box, Slide } from '@chakra-ui/react';
 import { CiHeart } from "react-icons/ci";
+import { useToast } from '@chakra-ui/react';
+import { IoCheckmarkDoneCircle } from "react-icons/io5";
+
+
 
 export const Items3 = () => {
+    const toast = useToast()
+
+    const CustomTitle = ({ children }) => (
+        <div style={{ fontSize: "30px", color: "green" }}>{children}</div>
+    );
+
     const { isAuth } = useContext(AuthContext);
     const name = useNavigate();
 
@@ -17,6 +27,17 @@ export const Items3 = () => {
             name("/signup");
             console.log("Redirecting to signup component...");
             return;
+        }
+        else {
+            toast({
+                title: <CustomTitle>Item Added successfully to cart</CustomTitle>,
+                status: "success",
+                duration: 3000, 
+                isClosable: true,
+                icon: <IoCheckmarkDoneCircle style={{ fontSize: "50px", color: "green" }} />,
+                transition: Slide,
+            });
+
         }
         const existingItems = JSON.parse(localStorage.getItem('cartItems')) || [];
         existingItems.push(item);
@@ -64,17 +85,17 @@ export const Items3 = () => {
     return (
         <>
             <div className="px-5 py-0 w-[100%] m-auto ">
-                <box className="flex justify-between">
+                <Box className="flex justify-between">
                     <Text className='mt-2 font-bold text-xl'>Shop all Easter</Text>
-                    <a className="underline">Decor, baskets & more.</a>
-                </box>
+                    <Link to="/Viewall" className="underline">Decor, baskets & more.</Link>
+                </Box>
                 <Text className='mt-2'>Decor, baskets & more..</Text>
                 <div className=" mt-2 px-6">
                     <Slider {...settings}>
                         {Data.map((ele) => (
-                            <div className=" p-6 h-[300px] w-[180px]" key={ele.id}>
+                            <div className=" p-2 h-[300px] w-[180px]" key={ele.id}>
                                 <div className='flex justify-center'>
-                                    <Image src={ele.thumbnail} alt="images"
+                                    <img src={ele.img} alt="images"
                                         style={{ height: "100px", width: "120px" }}
                                     />
                                     <CiHeart style={{ height: "30px", width: "50px", marginRight: "-40px" }} />
