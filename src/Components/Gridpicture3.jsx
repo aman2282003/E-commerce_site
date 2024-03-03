@@ -35,11 +35,11 @@ export const Gridpicture3 = () => {
                     <p className=' p-3 text-xl text-blue'>Patio sets</p>
                     <p className=' font-bold px-3 text-2xl text-blue'>Take a set</p>
                     <a className=' px-5 underline'>shop now</a>  </GridItem>
-                <GridItem className="cursor-pointer" borderRadius={15} rowSpan={1} colSpan={1} bgImage={`url(${image3})`}
+                <GridItem className="cursor-pointer" borderRadius={15} rowSpan={1} colSpan={1} bgImage={`url(${"https://i5.walmartimages.com/dfw/4ff9c6c9-fa6a/k2-_11ec95f1-13e0-4bb6-8127-9fd4b7d71d0e.v1.jpg?odnHeight=342&odnWidth=248&odnBg=&odnDynImageQuality=70"})`}
                     backgroundSize="cover" backgroundPosition="center">
-                    <p className='font-bold p-5 text-2xl text-blue-1000'>Bring on the home flexible heat</p>
+                    <p className='font-bold p-5 text-2xl text-blue-1000'>Bring on the heat</p>
                     <a className='p-5 underline'>shop heaters</a> </GridItem>
-                <GridItem className="cursor-pointer" borderRadius={15} rowSpan={1} colSpan={1} bgImage={`url(${image4})`}
+                <GridItem className="cursor-pointer" borderRadius={15} rowSpan={1} colSpan={1} bgImage={`url(${"https://i5.walmartimages.com/dfw/4ff9c6c9-6f04/k2-_75263dfe-61db-4685-a480-8d95de37ea41.v1.jpg?odnHeight=342&odnWidth=248&odnBg=&odnDynImageQuality=70"})`}
                     backgroundSize="cover" backgroundPosition="center">
                     <p className='font-bold p-5 text-xl text-blue'>All outdoors <br />lighting</p>
                     <a className='p-5 underline'>shop now</a></GridItem>

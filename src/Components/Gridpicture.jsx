@@ -43,7 +43,7 @@ export const Gridpicture = () => {
                     backgroundSize="cover" backgroundPosition="center">
                     <p className='font-bold p-5 text-3xl text-blue-1000'>Top styles-low, low prices</p>
                     <a className='p-5 underline'>shop now</a> </GridItem>
-                <GridItem className="cursor-pointer" borderRadius={15} rowSpan={1} colSpan={1} bgImage={`url(${image7})`}
+                <GridItem className="cursor-pointer" borderRadius={15} rowSpan={1} colSpan={1} bgImage={`url(${"https://i5.walmartimages.com/dfw/4ff9c6c9-c0a8/k2-_7f9bdd0f-177c-4330-9758-ef4f41edad44.v1.jpg?odnHeight=256&odnWidth=385&odnBg=&odnDynImageQuality=70"})`}
                     backgroundSize="cover" backgroundPosition="center">
                     <p className='font-bold p-5 text-xl text-blue-1000'>Apple savings up to $150 <br />off</p>
                     <a className='p-5 underline'>shop now</a></GridItem>
