@@ -21,8 +21,9 @@ Frontend Walmart Clone Using React & Talwind-css
 - Pop-up Notification
 - Resposive slider
 
-## Home Page 🙈 :
+## Home Page :
 ![Screenshot 2024-03-04 021332](https://github.com/aman2282003/E-commerce_site/assets/131010086/62d8291a-6a48-4051-a413-ac2b143fa2f7)
+## Responsive Slider :
 ![Screenshot 2024-03-04 021803](https://github.com/aman2282003/E-commerce_site/assets/131010086/f4947514-07c9-49bd-9dee-ab9c9927176b)
 ![Screenshot 2024-03-04 021824](https://github.com/aman2282003/E-commerce_site/assets/131010086/2fdb7a8f-74f7-4a8b-b1bf-311f04fbe636)
 ![Screenshot 2024-03-04 021835](https://github.com/aman2282003/E-commerce_site/assets/131010086/c334e3ef-9f99-4e83-a657-592abaa750e3)
