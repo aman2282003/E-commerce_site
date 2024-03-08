@@ -1,7 +1,7 @@
 ## Overview
 Frontend Walmart Clone Using React & Talwind-css
 
-This project is a clone of the Walmart frontend, built using React and Tailwind CSS. It replicates several key features of the Walmart website to provide users with a familiar shopping experience.
+This is a fully functional e-commerce site built using React, Chakra UI, and Tailwind CSS. It includes features such as login/signup functionality, responsive design, dropdown menus, add to cart/remove from cart functionality, real-time price updates, authentication, pop-up notifications, and a responsive slider.
 
 
 ## Tech Stack
@@ -15,14 +15,14 @@ This project is a clone of the Walmart frontend, built using React and Tailwind 
 
 ## Features
 
-- Login & Signup Functionality: Users can register or log in to their accounts.
-- Responsive Design: The website is optimized for various screen sizes.
-- Dropdown Menus: Navigation menus expand and collapse seamlessly.
-- Add to Cart & Remove from Cart Functionality: Users can add items to their cart and remove them as needed.
-- Real-time Price Updates: Prices are updated dynamically as items are added or removed from the cart.
-- Authentication: Secure user authentication ensures privacy and data protection.
-- Pop-up Notification: Notifications inform users about successful actions or errors.
-- Responsive Slider: The homepage features a responsive slider for showcasing featured products.
+- **Login & Signup Functionality**: Users can create an account and log in to access their account details.
+- **Responsive Design**: The site is fully responsive and adapts to different screen sizes.
+- **Dropdown Menus**: The site includes dropdown menus for easy navigation.
+- **Add to Cart & Remove from Cart Functionality**: Users can add items to their cart and remove them as needed.
+- **Real-time Price Updates**: The cart page updates in real-time as users add or remove items.
+- **Authentication**: The site uses authentication to ensure secure access to user account details.
+- **Pop-up Notification**: The site includes pop-up notifications to inform users about various events.
+- **Responsive Slider**: The site includes a responsive slider to showcase featured products.
 
 ## Home Page :
 ![Screenshot 2024-03-04 021332](https://github.com/aman2282003/E-commerce_site/assets/131010086/62d8291a-6a48-4051-a413-ac2b143fa2f7)
