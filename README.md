@@ -1,6 +1,9 @@
 ## Overview
 Frontend Walmart Clone Using React & Talwind-css
 
+This project is a clone of the Walmart frontend, built using React and Tailwind CSS. It replicates several key features of the Walmart website to provide users with a familiar shopping experience.
+
+
 ## Tech Stack
 [![HTML](https://img.shields.io/badge/HTML-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![JavaScript](https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -12,14 +15,14 @@ Frontend Walmart Clone Using React & Talwind-css
 
 ## Features
 
-- Login & Signup Functionality
-- Responsive Design
-- Dropdown Menus
-- Add to Cart & Remove from Cart Functionality
-- Real-time Price Updates
-- Authentication
-- Pop-up Notification
-- Resposive slider
+- Login & Signup Functionality: Users can register or log in to their accounts.
+- Responsive Design: The website is optimized for various screen sizes.
+- Dropdown Menus: Navigation menus expand and collapse seamlessly.
+- Add to Cart & Remove from Cart Functionality: Users can add items to their cart and remove them as needed.
+- Real-time Price Updates: Prices are updated dynamically as items are added or removed from the cart.
+- Authentication: Secure user authentication ensures privacy and data protection.
+- Pop-up Notification: Notifications inform users about successful actions or errors.
+- Responsive Slider: The homepage features a responsive slider for showcasing featured products.
 
 ## Home Page :
 ![Screenshot 2024-03-04 021332](https://github.com/aman2282003/E-commerce_site/assets/131010086/62d8291a-6a48-4051-a413-ac2b143fa2f7)
