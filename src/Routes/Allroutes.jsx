@@ -42,7 +42,8 @@ export function Allroutes() {
             <Items3 />
             <Gridpicture5 />
             <Items4 />
-           
+           <Footer1/>
+            <Footer2/>
             
         </>
     )
