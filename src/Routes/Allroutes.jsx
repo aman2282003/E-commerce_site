@@ -25,15 +25,7 @@ export function Allroutes() {
 
     return (
         <>
-             <Items2 />
-            <Creditcard2 />
-            <Flashdeals3 />
-            <Gridpicture4 />
-            <Items3 />
-            <Gridpicture5 />
-            <Items4 />
-           <Footer1/>
-            <Footer2/>
+
             <Navbar />
             <Navbar2 />
             <Gridpicture />
@@ -44,6 +36,16 @@ export function Allroutes() {
             <RoundedElements />
             <Creditcard />
             <Gridpicture3 />
+             <Items2 />
+            <Creditcard2 />
+            <Flashdeals3 />
+            <Gridpicture4 />
+            <Items3 />
+            <Gridpicture5 />
+            <Items4 />
+           <Footer1/>
+            <Footer2/>
+            
            
             
         </>
