@@ -2,7 +2,7 @@
 import React from 'react';
 // imported images
 import creditcardimage from "../assets/Creditcard2.png";
-
+    
 export const Creditcard2 = () => {
     return (
         <div className='md p-5 flex items-center justify-center rounded-lg shadow-md py-2 m-3 bg-blue-100 border-rounded'>
